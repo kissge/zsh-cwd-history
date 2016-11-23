@@ -18,6 +18,9 @@ _zsh_cwd_history_histfile_for_cwd() {
 _zsh_cwd_history_switch_histfile() {
 	local new_histfile=$1
 
+	# Assert the directory exists
+	mkdir -p "$ZSH_CWD_HISTORY_DIR"
+
 	# Write old histfile
 	fc -P
 
